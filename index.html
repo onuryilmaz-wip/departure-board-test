@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>JavaScript/CSS3 Departure Board</title>
+		<link rel="stylesheet" href="./css/departure-board.css" />
+	</head>
+	
+	<body>
+		<div id="test"></div>
+		
+		<script src="./js/departure-board.js"></script>
+		<script>
+		
+			var board = new DepartureBoard (document.getElementById ('test'), { rowCount: 2, letterCount: 27 }); 
+			board.setValue (['We develop products', 'We solve problems']);
+			
+			var textArray = [			    'develop', 'build', 'create', 'understand', 'discover'		];
+			var textArray2 = [			    'products', 'intelligence', 'software',  'communication', 'stuff', 'future', 'digital', 'solutions', 'marketing'		];
+
+			window.setInterval (function () {
+							var randomNumber = Math.floor(Math.random()*textArray.length);
+							var randomNumber1 = Math.floor(Math.random()*textArray.length);
+							
+							var randomNumber2 = Math.floor(Math.random()*textArray2.length);
+							var randomNumber3 = Math.floor(Math.random()*textArray2.length);
+						 
+			 	board.setValue ( [ 'We ' + textArray[randomNumber] + ' ' + textArray2[randomNumber2], 'We ' + textArray[randomNumber1] + ' ' + textArray2[randomNumber3] ]  );
+
+			}, 8000);
+
+		</script>
+	</body>
+</html>
